@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Owner Dashboard | Scent of Mirage Perfumes</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Scent of Mirage home">
+        <span class="brand-mark">SM</span>
+        <span>Scent of Mirage</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="order.html">Order</a>
+        <a href="contact.html">Contact</a>
+        <a class="active" href="orders.html">Owner</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-title">
+        <p class="eyebrow">Owner only</p>
+        <h1>Packing dashboard.</h1>
+        <p>Open customer orders, check what to pack, change status, export orders, and print packing slips.</p>
+      </section>
+
+      <section class="owner-login" id="ownerLogin">
+        <h2>Owner access</h2>
+        <p>Enter your owner PIN to see the orders.</p>
+        <label>
+          PIN
+          <input id="ownerPin" type="password" inputmode="numeric" placeholder="Enter PIN">
+        </label>
+        <button class="button primary" id="unlockOwner" type="button">Open dashboard</button>
+        <p class="login-error" id="loginError" hidden>Wrong PIN. Try again.</p>
+      </section>
+
+      <section class="owner-dashboard" id="ownerDashboard" hidden>
+        <div class="manager-toolbar">
+          <label class="search-label">
+            Search orders
+            <input id="orderSearch" placeholder="Name, phone, scent, address">
+          </label>
+          <button class="button secondary" id="exportOrders" type="button">Export CSV</button>
+          <button class="button danger" id="clearOrders" type="button">Clear all</button>
+        </div>
+
+        <section class="orders-panel">
+          <div class="orders-stats" id="ordersStats"></div>
+          <div id="ordersList" class="orders-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Scent of Mirage Perfumes</p>
+      <p>Tip: keep this page open on the device you use for shipping.</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
